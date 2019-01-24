@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="form-group">
 						<label for="price">Price</label>
-						<input type="text" class="form-control" id="price" name="price" placeholder="Price">
+						<input type="text" class="form-control number-only" id="price" name="price" placeholder="Price">
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-10">
@@ -111,6 +111,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					{ "data": "timestamp" },
 				]
 			} );
+			$(".number-only").keydown(function (e) {
+				if (!e.key.match(/[0-9]/) && !(e.key == "Backspace") && !(e.key == "Enter") && !(e.key == "Tab") && !(e.key == "ArrowLeft") && !(e.key == "ArrowRight")){
+					return false;
+				}
+			});
 		} );
 	</script>
 </body>
