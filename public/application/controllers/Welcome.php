@@ -20,9 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('Users_model');
-		$data['profile'] = $this->Users_model->get_users();
-		$this->load->view('welcome_message',$data);
+		$this->load->view('welcome_message');
 	}
 	public function save() {
 		$this->load->model('Users_model');
@@ -48,5 +46,16 @@ class Welcome extends CI_Controller {
 			redirect('Welcome','refresh');
 		}
 
+	}
+
+	public function getusers() {
+		$this->load->model('Users_model');
+		$data['data'] = $this->Users_model->get_users();
+		echo json_encode($data);
+	}
+	public function getprice() {
+		$this->load->model('Price_model');
+		$data['data'] = $this->Price_model->get_price();
+		echo json_encode($data);
 	}
 }

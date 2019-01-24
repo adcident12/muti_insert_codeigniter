@@ -5,10 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -41,6 +45,72 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</form>
 			</div>
 		</div>
+		<div class="card mt-5">
+			<div class="card-header" style="background-color: #dd4814;">
+				<h4 style="color: #ffffff;"><ion-icon name="body"></ion-icon> Table Users</h4>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="table1" class="display" style="width:100%">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>fname</th>
+								<th>lname</th>
+								<th>price_id</th>
+								<th>timestamp</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card mt-5">
+			<div class="card-header" style="background-color: #dd4814;">
+				<h4 style="color: #ffffff;"><ion-icon name="card"></ion-icon> Table Price</h4>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="table2" class="display" style="width:100%">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>user_id</th>
+								<th>price</th>
+								<th>timestamp</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
+	<script>
+		$(document).ready(function() {
+			$('#table1').DataTable( {
+				"ajax": '<?php echo site_url('Welcome/getusers'); ?>',
+				"columns": [
+					{ "data": "id" },
+					{ "data": "fname" },
+					{ "data": "lname" },
+					{ "data": "price_id" },
+					{ "data": "timestamp" },
+				]
+			} );
+		} );
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('#table2').DataTable( {
+				"ajax": '<?php echo site_url('Welcome/getprice'); ?>',
+				"columns": [
+					{ "data": "id" },
+					{ "data": "user_id" },
+					{ "data": "price" },
+					{ "data": "timestamp" },
+				]
+			} );
+		} );
+	</script>
 </body>
 </html>
