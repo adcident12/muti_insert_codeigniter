@@ -55,9 +55,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<thead>
 							<tr>
 								<th>id</th>
+								<th>price_id</th>
 								<th>fname</th>
 								<th>lname</th>
-								<th>price_id</th>
 								<th>timestamp</th>
 							</tr>
 						</thead>
@@ -91,9 +91,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				"ajax": '<?php echo site_url('Welcome/getusers'); ?>',
 				"columns": [
 					{ "data": "id" },
+					{ "data": "price_id" },
 					{ "data": "fname" },
 					{ "data": "lname" },
-					{ "data": "price_id" },
 					{ "data": "timestamp" },
 				]
 			} );
