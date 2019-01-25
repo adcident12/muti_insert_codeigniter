@@ -6,13 +6,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
 	<link rel="shortcut icon" type="image/png" href="https://seeklogo.com/images/C/codeigniter-logo-BDF3D666E7-seeklogo.com.png"/>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<!--Datatable CSS-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+	<!--Bootstrap4 CSS-->
+	<link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+	<!--Option Jquery Bootstrap4-->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<!--Datatable JS-->
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	<!--Icon JS-->
 	<script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 </head>
 <body>
@@ -52,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
-					<table id="table1" class="display" style="width:100%">
+					<table id="table1" class="table table-striped table-hover table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>id</th>
@@ -72,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
-					<table id="table2" class="display" style="width:100%">
+					<table id="table2" class="table table-striped table-hover table-bordered" style="width:100%">
 						<thead>
 							<tr>
 								<th>id</th>
