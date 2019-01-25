@@ -14,4 +14,11 @@ class Users_model extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->update('users', $array);
     }
+    public function tablejoin() {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->join('price', 'users.id = price.user_id');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

@@ -58,4 +58,9 @@ class Welcome extends CI_Controller {
 		$data['data'] = $this->Price_model->get_price();
 		echo json_encode($data);
 	}
+	public function getusersandprice() {
+		$this->load->model('Users_model');
+		$data['data'] = $this->Users_model->tablejoin();
+		echo json_encode($data);
+	}
 }

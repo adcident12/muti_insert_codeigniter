@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="card mt-5">
 			<div class="card-header" style="background-color: #dd4814;">
-				<h4 style="color: #ffffff;"><ion-icon name="body"></ion-icon> Table Users</h4>
+				<h4 style="color: #ffffff;"><ion-icon name="contacts"></ion-icon> Table Users</h4>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="card mt-5">
 			<div class="card-header" style="background-color: #dd4814;">
-				<h4 style="color: #ffffff;"><ion-icon name="card"></ion-icon> Table Price</h4>
+				<h4 style="color: #ffffff;"><ion-icon name="wallet"></ion-icon> Table Price</h4>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -83,6 +83,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<tr>
 								<th>id</th>
 								<th>user_id</th>
+								<th>price</th>
+								<th>timestamp</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card mt-5">
+			<div class="card-header" style="background-color: #dd4814;">
+				<h4 style="color: #ffffff;"><ion-icon name="git-branch"></ion-icon> Table Users Join Table Price</h4>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="table3" class="table table-striped table-hover table-bordered" style="width:100%">
+						<thead>
+							<tr>
+								<th>fname</th>
+								<th>lname</th>
 								<th>price</th>
 								<th>timestamp</th>
 							</tr>
@@ -122,6 +141,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return false;
 				}
 			});
+		} );
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('#table3').DataTable( {
+				"ajax": '<?php echo site_url('Welcome/getusersandprice'); ?>',
+				"columns": [
+					{ "data": "fname" },
+					{ "data": "lname" },
+					{ "data": "price" },
+					{ "data": "timestamp" },
+				]
+			} );
 		} );
 	</script>
 </body>
