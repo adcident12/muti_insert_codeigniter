@@ -1,2 +1,2 @@
 # muti_insert_codeigniter
-#Demo https://apai.life/multiInsertCodeigniter
+#Demo https://codeigniter-multi-insert.popzone.link
